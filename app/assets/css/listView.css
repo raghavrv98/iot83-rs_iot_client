@@ -1,0 +1,303 @@
+/* / list view CSS start / */
+.app-list-view li {
+  position: relative;
+  margin: 0px 5px 15px 0px;
+  padding-left: 50px;
+}
+.app-list-view li:last-child, .mobile-list-view li:last-child {
+  margin-bottom: 0;
+}
+.app-list-view li .custom-check-box{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+}
+.app-list-view .app-list-item {
+position: relative;
+padding: 0 0 0 70px;
+display: flex;
+flex-wrap: wrap;
+flex-direction: row;
+align-items: center;
+background-color: var(--white);
+border-radius: 4px;
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+transition: all 0.4s ease;
+}
+.app-list-view .app-list-item.highlighted-alarm{
+  box-shadow: 2px 2px 10px rgb(120 53 69 / 80%);
+}
+.app-list-view .app-list-item.highlighted-alarm::before{
+  background-color: var(--secondaryColor);
+}
+.app-list-view .app-list-item::before {
+content: '';
+display: inline-block;
+position: absolute;
+width: 3px;
+left: 0;
+top: 0;
+bottom: 0;
+border-radius: 4px 0 0 4px;
+background-color: var(--borderDarkColor);
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.app-list-view .app-list-item:hover {
+box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+transition: all ease 300ms;
+}
+.alarm-icon {
+position: absolute;
+left: 20px;
+top: 50%;
+transform: translateY(-50%);
+display: inline-block;
+width: 36px;
+height: 36px;
+opacity: 0.9;
+}
+.alarm-icon img {
+width: 100%;
+height: 100%;
+}
+.app-list-view .list-content {
+flex: 0 0 15%;
+max-width: 15%;
+padding: 12px;
+}
+.app-list-view .list-content h6 {
+font-size: 13px;
+color: var(--contentColor);
+font-weight: 400;
+margin: 0 0 10px;
+}
+.app-list-view .list-content p {
+font-size: 13px;
+font-weight: 600;
+color: var(--textColor);
+margin: 0;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.app-list-view .list-description {
+flex: 0 0 25%;
+max-width: 25%;
+padding: 12px;
+}
+.app-list-view .list-description p {
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+.title {
+font-size: 13px;
+color: var(--contentColor);
+font-weight: 500;
+margin-right: 5px;
+}
+.content {
+font-size: 13px;
+font-weight: 600;
+letter-spacing: 0.01em;
+}
+.app-list-view .list-content {
+  flex: 0 0 15%;
+  max-width: 15%;
+  padding: 12px;
+}
+.app-list-view .list-content h6 {
+  font-size: 13px;
+  color: var(--contentColor);
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.app-list-view .list-content p {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.app-list-view .list-content.commentBtn {
+flex: 0;
+text-align: center;
+}
+.app-list-view .list-content.commentBtn h6 {
+margin-bottom: 7px;
+}
+.app-list-view .commentBtn .btn-transparent {
+font-size: 13px;
+color: var(--contentColor);
+font-weight: 500;
+}
+.app-list-view .commentBtn .btn-transparent > span {
+display: block;
+}
+.alarm-btn-group {
+position: sticky;
+top: 135px;
+z-index: 1;
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+padding: 10px 15px;
+border-radius: 4px;
+background-color: white;
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+margin-bottom: 20px;
+}
+.alarm-btn-group::before {
+content: '';
+display: inline-block;
+position: absolute;
+top: 5px;
+bottom: 5px;
+left: 2px;
+width: 5px;
+border-radius: 5px;
+background-color: var(--secondaryColor);
+}
+.alarm-btn-group h6 {
+position: relative;
+display: inline-block;
+padding: 5px 15px;
+margin: 0;
+color: var(--textColor);
+font-weight: 600;
+font-size: 13px;
+transition: all 0.4s ease;
+}
+.alarm-btn-group .alarm-status-wrapper {
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex: 1;
+}
+.alarm-status-wrapper .alarm-btn {
+display: flex;
+flex-wrap: wrap;
+align-items: center;
+justify-content: center;
+flex: 1;
+}
+.alarm-btn .btn-transparent {
+position: relative;
+padding: 10px 25px;
+border-radius: 34px !important;
+box-shadow: inset 2px 4px 10px 0 rgba(0, 0, 0, 0.15),
+inset -6px -6px 10px 0 rgba(255, 255, 255, 0.5);
+font-size: 13px;
+font-weight: 600;
+color: var(--textColor);
+border: 2px solid transparent;
+}
+.alarm-btn .btn-transparent i {
+margin-right: 10px;
+padding-right: 10px;
+border-right: 1px solid var(--borderDarkColor);
+}
+.alarm-btn .btn-transparent.active {
+box-shadow: 12px 8px 20px 0 rgba(0, 0, 0, 0.2),
+-12px -12px 24px 0 rgba(255, 255, 255, 0.5);
+}
+.alarm-btn .btn-transparent:hover {
+transform: none;
+border: 1px solid var(--borderColor);
+box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.alarm-status-wrapper {
+display: none;
+}
+.mobile-list-view {
+display: none;
+}
+/* / list view CSS end / */
+
+/* / Responsive list view CSS start / */
+
+@media only screen and (max-width: 768px) {
+.alarm-btn-group {
+padding: 10px;
+}
+.alarm-btn-group::before {
+content: none;
+}
+.alarm-btn-group h6 {
+font-size: 15px;
+padding: 10px 5px;
+}
+.alarm-btn-group .alarm-status-wrapper {
+justify-content: flex-end;
+}
+.alarm-status-wrapper .alarm-btn {
+flex: 0;
+margin-right: 5px;
+}
+.alarm-status-wrapper .alarm-btn:last-child {
+margin-right: 0;
+}
+.alarm-btn .btn-transparent {
+font-size: 0;
+padding: 10px;
+}
+.alarm-btn .btn-transparent i {
+margin: 0;
+padding: 0;
+border: 0;
+}
+.app-list-view {
+display: none;
+}
+
+.mobile-list-view {
+display: block;
+}
+.mobile-list-view li {
+position: relative;
+padding: 10px 10px 10px 50px;
+border-radius: 4px;
+background-color: var(--white);
+box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+transition: all ease 400ms;
+margin-bottom: 15px;
+border-left: 4px solid var(--secondaryColor);
+}
+.alarm-icon {
+top: 12px;
+left: 12px;
+width: 25px;
+height: 25px;
+transform: none;
+}
+.mobile-list-view li h6 {
+font-size: 15px;
+margin-bottom: 0px;
+font-weight: 600;
+text-decoration: underline;
+}
+.mobile-list-view li h6 span {
+font-size: 12px;
+font-weight: 400;
+font-style: italic;
+color: #757575;
+}
+.mobile-list-view li p {
+font-size: 12px;
+font-weight: 600;
+margin-bottom: 5px;
+}
+.mobile-list-view li h5 {
+font-size: 12px;
+font-weight: 600;
+margin: 0;
+font-style: italic;
+}
+}
+/* / Responsive list view CSS start  */

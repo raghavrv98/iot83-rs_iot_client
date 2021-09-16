@@ -1,0 +1,202 @@
+.app-content {
+  padding: 140px 10px 50px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.list-style-none {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+/* custom count badge CSS start  */
+.custom-count-badge {
+  display: inline-block;
+  color: var(--labelColor);
+  background-color: var(--secondaryColor);
+  margin-left: 6px;
+  padding: 4px;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.06);
+}
+/* custom count badge CSS end  */
+
+/* form group CSS start  */
+.form-group {
+  margin: 0;
+}
+.form-group .form-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--contentColor);
+}
+.form-group .form-control {
+  padding: 5px 20px 5px 10px;
+  font-size: 14px;
+  color: var(--textColor);
+  border: 0.086em solid var(--borderColor);
+}
+.form-control:focus {
+  box-shadow: none;
+}
+.form-control:hover {
+  border: 1px solid var(--borderDarkColor);
+}
+/* form group CSS end  */
+
+/* shelve popup CSS start  */
+.shelve-info {
+  position: relative;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  border-radius: 6px;
+  background-color: var(--white);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.shelve-info::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 2px;
+  width: 5px;
+  border-radius: 5px;
+  background-color: var(--secondaryColor);
+}
+.shelve-info h6 {
+  position: relative;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--contentColor);
+  margin: 0 10px 0 0;
+  padding-right: 10px;
+  border-right: 2px solid var(--borderDarkColor);
+}
+.shelve-info h6:last-child {
+  border-right: 0;
+}
+.shelve-info h6 strong {
+  font-weight: 600;
+  color: var(--textColor);
+  margin-left: 10px;
+}
+.shelve-body .form-group {
+  margin-bottom: 10px;
+}
+.shelve-body .form-group:last-child {
+  margin: 0;
+}
+/* shelve popup CSS end  */
+
+/* device detail css start  */
+.device-detail-outer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.device-detail-outer .device-detail-wrapper{
+  flex: 0 0 19%;
+  max-width: 19%;
+  background-color: var(--white);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.device-detail-outer .device-detail-wrapper .device-card {
+  width: 226px;
+  height: 400px;
+  padding: 76px 0;
+  margin: 0 auto;
+  border-radius: 4px;
+} 
+.device-detail-outer .device-detail-wrapper .device-card .card-thumbnail .card-header h6{
+  font-size: 19px;
+  margin-bottom: 8px;
+  width: auto;
+}
+.device-card .card-thumbnail .card-header h6 span {
+  width: 15px;
+  height: 15px;
+}
+.device-card .device-list .sub-device-list li {
+  margin: 10px 0;
+}
+.alarm-detail-view {
+  position: relative;
+  flex: 0 0 80%;
+  max-width: 80%;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  min-height: 400px ;
+  border-radius: 4px;
+}
+.alarm-detail-view .alarm-btn-group {
+  position: relative;
+  top: 0;
+  z-index: 0;
+}
+.alarm-detail-view .app-list-view {
+  max-height: 255px;
+  overflow-y: auto;
+}
+.device-summary {
+  position: absolute;
+  right: 25px;
+  bottom: 15px;
+  padding-top: 10px;
+}
+.device-summary h6 button {
+  border-radius: 5px;
+  padding: 6px 12px;
+}
+/* device detail css end  */
+
+/* Responsive MangeDevice */
+@media only screen and (max-width: 768px) {
+  .app-content {
+    padding: 135px 5px 65px;
+  }
+  /* Responsive deviceDetailPage CSS start */
+  .device-detail-outer {
+    display: block;
+  }
+  .device-detail-outer .device-detail-wrapper {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .device-detail-wrapper .device-card{
+    padding: 20px 0;
+    margin: 5px auto;
+    height: auto;
+  }
+  .alarm-detail-view {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  /* Responsive deviceDetailPage CSS end */
+}
+
+/* Responsive deviceDetailPage CSS start */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .device-detail-outer .device-detail-wrapper {
+    flex: 0 0 25%;
+    max-width: 25%;
+    padding: 10px;
+  }
+}
+/* Responsive deviceDetailPage CSS end */

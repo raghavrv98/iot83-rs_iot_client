@@ -1,0 +1,204 @@
+@media only screen {
+  .login-bg {
+    position: relative;
+    background: url('../images/bgNvent.jpg') center;
+    background-size: cover;
+    min-height: 100vh;
+  }
+  .login-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .login-frame {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    z-index: 1;
+  }
+  .login-info,
+  .login-branding {
+    position: relative;
+    padding: 30px 45px;
+    flex-basis: 49.77%;
+    max-width: 49.77%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .login-branding {
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+  .login-branding .branding-logo {
+    height: 250px;
+    width: 250px;
+    margin: 0 auto 8px;
+  }
+  .login-branding .branding-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .login-branding .branding-text {
+    width: 300px;
+    margin: 0 auto;
+    padding-top: 7px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primaryColor);
+    border-top: 2px solid var(--secondaryColor);
+    font-family: 'Quicksand', sans-serif !important;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  }
+  .login-info {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-left: 8px solid var(--secondaryColor);
+    font-family: 'Roboto', sans-serif;
+  }
+  .login-info .welcome-text {
+    padding: 15px;
+  }
+  .login-info .welcome-text h4 {
+    position: relative;
+    color: var(--white);
+    font-size: 15px;
+    font-weight: lighter;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .login-info .welcome-text h3 {
+    position: relative;
+    margin-bottom: 0px;
+    color: var(--white);
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .login-info .welcome-text h4 i,
+  .login-info .welcome-text h3 i {
+    position: relative;
+    color: var(--white);
+    font-size: 18px;
+  }
+  .login-info .welcome-text h4 i {
+    transform: translate(-5px, -3px);
+  }
+  .login-info .welcome-text h3 i {
+    transform: translate(5px, -6px);
+  }
+
+  .login-form .loginError {
+    margin: 0;
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    color: var(--red);
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .login-form .form-content {
+    margin-bottom: 14px;
+  }
+  .login-form .form-content:last-child {
+    margin: 0;
+  }
+  .login-form label {
+    color: var(--labelColor);
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    margin: 0;
+  }
+  .login-form .form-control {
+    border-color: var(--primaryColor);
+    background-color: var(--primaryColor);
+    font-size: 14px;
+    padding: 20px;
+    color: var(--labelColor);
+    border-radius: 4px;
+  }
+  .login-form .form-control::placeholder {
+    color: var(--secondaryColor);
+  }
+  .login-form .form-control:hover,
+  .login-form .form-control:focus {
+    box-shadow: none;
+  }
+  .login-form .btn-danger {
+    width: 100%;
+  }
+  .login-form .btn-danger:hover {
+    transform: none;
+  }
+  .login-form .btn-transparent {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .login-form .btn-transparent img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+  .login-form .btn-transparent:hover {
+    text-decoration: underline;
+    transform: none;
+    box-shadow: none;
+  }
+  .login-form .radioText {
+    color: var(--labelColor);
+  }
+  .login-form .link {
+    display: inline-block;
+    font-size: 13px;
+  }
+  .login-form h5 {
+    margin: 0;
+    font-size: 14px;
+    color: var(--labelColor);
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .login-bg::after {
+    content: none;
+  }
+  .login-frame {
+    width: 100%;
+    flex-direction: column;
+  }
+  .login-info,
+  .login-branding {
+    border: none;
+    padding: 10px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .login-info .welcome-text h4 {
+    font-size: 14px;
+  }
+  .login-info .welcome-text h3 {
+    font-size: 23px;
+  }
+  .login-branding .branding-text {
+    width: auto;
+  }
+  .login-branding .branding-logo {
+    width: auto;
+    height: auto;
+  }
+  .login-form {
+    padding: 10px;
+  }
+}

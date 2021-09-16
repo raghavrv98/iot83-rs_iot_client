@@ -1,0 +1,229 @@
+@import './theme.css';
+
+/* brands css start */
+.content-head {
+  background-color: white;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+}
+.brand-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.brand-wrapper .brand-logo {
+  flex: 0 0 10%;
+  max-width: 10%;
+}
+.brand-wrapper .brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.brand-wrapper .brand-name h1 {
+  font-size: 60px;
+  margin: 0;
+}
+.content-sub-head {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.content-sub-head .welcome-title {
+  flex: 0 0 30%;
+  max-width: 30%;
+  text-align: center;
+}
+.welcome-title h6 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 25px;
+}
+.welcome-title h6 strong {
+  font-size: 30px;
+}
+.welcome-title p {
+  font-size: 19px;
+  margin: 0px;
+  color: black;
+  font-weight: 600;
+}
+.logout-btn button {
+  padding: 8px 15px;
+  background-color: black;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.logout-btn button i{
+  font-size: 13px;
+  margin-left: 10px;
+}
+.content-body {
+  padding: 280px 10px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.card-detail-wrapper {
+  flex: 0 0 69%;
+  max-width: 69%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 35px 15px 15px;
+  background-color: white;
+}
+.card-detail-wrapper .landing-card-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.landing-card-list li {
+  flex: 0 0 33.3%;
+  max-width: 33.3%;
+  justify-content: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.landing-card {
+  padding: 15px;
+  border-radius: 5px;
+  position: relative;
+  text-align: center;
+  background-color: black;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  color: white;
+  border-bottom: 6px solid transparent;
+}
+.landing-card:hover {
+  background-color: var(--secondaryColor);
+}
+.landing-card .icon-logo i {
+  padding-top: 15px;
+  font-size: 35px;
+}
+.landing-card h6 {
+  padding: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+.pie-chart-wrapper {
+  flex: 0 0 30%;
+  max-width: 30%;
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+.pie-chart-wrapper h6 {
+  margin: 0;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  border-bottom: 2px solid var(--secondaryColor);
+}
+.pie-chart-wrapper .pie-chart-box {
+  height: 35vh;
+}
+
+/* Responsive CSS Start */
+@media only screen and (max-width: 768px) {
+  .brand-wrapper .brand-logo {
+    flex: 0 0 20%;
+    max-width: 20%;
+    height: auto;
+  }
+  .brand-wrapper .brand-name h1 {
+    font-size: 15px;
+  }
+  .content-sub-head {
+    margin-top: 10px;
+  }
+  .content-sub-head .welcome-title {
+    flex: 0 0 60%;
+    max-width: 60%;
+    text-align: left;
+  }
+  .welcome-title h6 {
+    font-size: 16px;
+  }
+  .welcome-title h6 strong {
+    font-size: 18px;
+  }
+  .welcome-title p {
+    font-size: 12px;
+  }
+  .logout-btn button {
+    padding: 5px 8px;
+    font-size: 0;
+  }
+  .logout-btn button i{
+    margin: 0;
+  }
+  .content-body {
+    padding: 145px 0 0;
+    flex-direction: column-reverse;
+  }
+  .card-detail-wrapper {
+    padding: 10px;
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .pie-chart-wrapper {
+    margin-bottom: 5px;
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .pie-chart-wrapper h6 {
+    padding: 10px;
+  }
+  .pie-chart-wrapper .pie-chart-box {
+    height: 31.5vh;
+    padding: 10px;
+  }
+  .card-detail-wrapper .landing-card-list {
+    flex-direction: row;
+  }
+  .card-detail-wrapper .landing-card-list li {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 5px;
+    padding: 5px;
+  }
+  .landing-card {
+    padding: 10px;
+  }
+  .landing-card .icon-logo i {
+    padding-top: 8px;
+    font-size: 25px;
+  }
+  .landing-card h6 {
+    font-size: 14px;
+    padding-bottom: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .brand-wrapper .brand-name h1 {
+    font-size: 40px;
+    margin: 0;
+  }
+  .content-sub-head {
+    margin-top: 10px;
+  }
+}
+/* Responsive CSS End */
+
+#chartdiv{
+  height: 100% ;
+  width: 100%;
+}

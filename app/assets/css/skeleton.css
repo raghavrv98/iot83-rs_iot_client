@@ -1,0 +1,530 @@
+.skeletonButton {
+  position: relative;
+  border-radius: 50px;
+  background-color: var(--skeletonColor);
+}
+
+.skeleton-content {
+  position: relative;
+  background-color: var(--skeletonColor);
+  border-radius: 4px;
+}
+
+/* List view CSS start  */
+.list-view li {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 84.89px;
+}
+.list-view li:last-child {
+  margin-bottom: 0;
+}
+.list-view li::before {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  width: 3px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 4px 0 0 4px;
+  background-color: var(--borderDarkColor);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.list-view .list-logo {
+  padding: 8px 15px;
+  height: 66.44px;
+}
+.list-logo div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+.list-view .list-detail {
+  flex: 1;
+  padding: 15px;
+}
+.list-detail > h6 {
+  display: block;
+  margin: 0 0 10px;
+  width: 200px;
+  height: 14.22px;
+}
+.list-detail > p {
+  display: block;
+  margin: 0;
+  width: 100px;
+  height: 14.22px;
+}
+.list-view.alarmView li {
+  padding: 15px 200px 15px 80px;
+}
+.list-view.alarmView .list-logo {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  top: 16px;
+  left: 16px;
+  padding: 0;
+}
+.list-view.alarmView li p {
+  width: 100%;
+  background-color: transparent;
+}
+.list-view.alarmView li .skeleton-content.alarmDetailSkeleton {
+  margin: 0;
+  width: 50%;
+  height: 12px;
+  background-color: var(--skeletonColor);
+}
+.list-view.alarmView li span {
+  width: 150px;
+  height: 12px;
+  margin-right: 10px;
+}
+.list-view.alarmView li span:last-child {
+  margin: 0;
+}
+.list-view.alarmView .btnList {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.btnList .skeletonButton {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+/* List view CSS end  */
+
+/* line chart CSS start  */
+.chart-outer {
+  position: relative;
+  min-height: 300px;
+  padding: 20px 40px 20px 80px;
+  border: 2px dashed var(--borderColor);
+  /* background-color: white; */
+  margin-bottom: 10px;
+  flex:0 0 85%;
+  max-width: 85%;
+}
+.chart-outer.borderNone {
+  border: none !important;
+}
+.chart-outer .chart-inner {
+  border: 1px solid var(--borderColor);
+  border-right: transparent;
+  border-top: transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(211, 211, 211, 0.5) 0%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  min-height: 230px;
+}
+.chart-outer .y-labels {
+  position: absolute;
+  left: 35px;
+  top: 28px;
+  bottom: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.y-labels span,
+.x-labels span {
+  width: 20px;
+  height: 12px;
+}
+.chart-outer .x-labels {
+  position: absolute;
+  bottom: 20px;
+  left: 100px;
+  right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+/* line chart CSS end  */
+
+/* home skeleton CSS start  */
+.brand-skeleton {
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  min-height: 230px;
+  justify-content: space-around;
+}
+.brand-skeleton .brand-logo-skeleton span {
+  display: inline-block;
+  width: 210px;
+  height: 120px;
+}
+.brand-skeleton .brand-content-skeleton span {
+  display: inline-block;
+  width: 450px;
+  height: 50px;
+}
+.brand-skeleton .brand-content-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.brand-content-body h6 {
+  display: block;
+  width: 200px;
+  height: 18px;
+  margin: 0;
+}
+.brand-content-body button {
+  border-radius: 34px;
+  width: 150px;
+  height: 44px;
+}
+.link-card-outer {
+  position: relative;
+  padding: 20px;
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  min-height: 388px;
+}
+.link-card-outer .quick-link-card {
+  background-color: var(--tableHeadingBackground);
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  text-align: center;
+  padding: 20px;
+  margin: 0 10px 20px;
+}
+.quick-link-card > div span {
+  display: inline-block;
+  width: 50px;
+  height:50px;
+}
+.quick-link-card h6 span {
+  display: inline-block;
+  width: 100px;
+  height: 13px;
+}
+.pie-chart-skeleton {
+  position: relative;
+  /* padding: 20px; */
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+  height: 100%;
+}
+.pie-chart-skeleton h6 {
+  padding: 15px;
+  border-bottom: 2px solid var(--borderDarkColor);
+  margin-bottom: 20px;
+}
+.pie-chart-skeleton h6 span {
+  display: inline-block;
+  width: 150px;
+  height: 12px;
+}
+.pie-chart-skeleton > div span {
+  display: inline-block;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+}
+.pie-chart-skeleton .pie-chart-legends span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 0;
+}
+/* home skeleton CSS end  */
+
+/* device page skeleton CSS start  */
+.device-list-skeleton {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.card.device-skeleton {
+  position: relative;
+  margin: 5px;
+  position: relative;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 7px 12px;
+}
+.device-skeleton .card-header {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+.device-skeleton .card-header h6 {
+  position: relative;
+  width: 100px;
+  padding: 0 8px;
+}
+.device-list-skeleton .card-body {
+  padding: 0;
+}
+.device-list-skeleton .detail-card-body li {
+  flex: 1;
+  max-width: none;
+  margin-bottom: 6px;
+}
+.detail-card-body li span {
+  width: 50px;
+  height: 8px;
+  display: inline-block;
+}
+/* device page skeleton CSS end  */
+
+/* alarm filter CSS start  */
+.alarm-filter-outer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 15px;
+  padding: 10px 5px;
+  background-color: var(--white);
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.filter-view {
+  position: relative;
+  text-align: center;
+}
+.alarm-filter-outer div:last-child {
+  padding-right: 0 !important;
+}
+.alarm-filter-outer .filter-view div {
+  width: 122.22px;
+  height: 33px;
+  background-color: var(--skeletonColor);
+  border-radius: 34px;
+  display: inline-block;
+}
+/* alarm filter CSS start  */
+
+/* pagination skeleton start  */
+.pagination-skeleton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding: 15px;
+  background-color: white;
+  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+.pagination-skeleton button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.pagination-skeleton h6,
+.skeletonSummary h6 {
+  width: 100px;
+  height: 13px;
+  margin: 0 10px 0 0;
+  display: inline-block;
+}
+/* pagination skeleton end  */
+
+/* skeletonSummary start  */
+.skeletonSummary {
+  position: relative;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  padding: 15px;
+  background-color: var(--tableHeadingBackground);
+}
+/* skeletonSummary end  */
+
+/* device detail page skeleton CSS start  */
+/* .detail-card-outer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100%;
+  
+}
+.detail-card-outer .detail-card-skeleton {
+  position: relative;
+  background-color: var(--white);
+  border-radius: 40px;
+  margin: 0;
+  padding: 30px 15px;
+  height: 100%;
+ 
+} */
+.skeleton-device-detail-card .card-header {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skeleton-device-detail-card .card-header h6 {
+  width: 200px;
+  height: 25px;
+ margin: 12px;
+}
+.skeleton-device-detail-card .card-body {
+  padding: 0;
+}
+.skeleton-device-detail-card .detail-card-body li {
+  margin-bottom: 17px;
+  justify-content: center;
+}
+.skeleton-device-detail-card .detail-card-body li div {
+  width: 80px;
+  height: 13px;
+}
+.skeleton-device-detail-outer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.skeleton-device-detail-card {
+  /* flex: 0 0 20%;
+  max-width: 20%; */
+  width: 210px;
+  height: 230px;
+  margin: 20px 0 0 60px;
+  
+}
+/* device detail page skeleton CSS end  */
+
+/* Trends view page CSS start  */
+
+.skeleton-device-parameter-box {
+  background-color: var(--white);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+}
+.skeleton-attribute-filter-wrapper{
+  height: 85px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+.skeleton-attribute-filter-wrapper .skeleton-content{
+  height: 35px;
+}
+.skeleton-attribute-filter-wrapper label.skeleton-content {
+  width: 150px;
+  height: 20px;
+  margin-bottom: 0px;
+}
+.skeleton-attribute-filter-list {
+  height: 41px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+}
+.skeleton-attribute-filter-list .skeleton-content {
+  width: 150px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+.skeleton-trends-chart-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.skeleton-trends-chart-wrapper .skeleton-device-tag{
+  flex:0 0 15%;
+  max-width: 15%;
+  padding-right: 10px;
+}
+.skeleton-trends-chart-wrapper .skeleton-device-tag h6.skeleton-content{
+  height: 50px;
+}
+
+/* Trends view page CSS end  */
+
+/* NoDataFound CSS start  */
+.no-data-outer .skeleton-content::after {
+  content: none;
+}
+.no-data-outer {
+  position: relative;
+  height: calc(100vh - 720px);
+  overflow: hidden;
+}
+.no-data-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.no-data-view .no-data-image {
+  background-image: url('../images/nVentNoData.png');
+  width: 115px;
+  height: 115px;
+  position: relative;
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+.no-data-image img {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(50% + 6px);
+}
+.no-data-outer h3 {
+  margin: 0 0 10px;
+  font-size: 18px;
+  color: var(--secondaryColor);
+  font-weight: 600;
+}
+.no-data-outer h4 {
+  margin: 0;
+  font-size: 13px;
+  color: var(--textColor);
+  font-weight: 600;
+}
+/* NoDataFound CSS end  */

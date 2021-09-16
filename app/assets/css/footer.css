@@ -1,0 +1,134 @@
+/* bottom pagination CSS start  */
+.app-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background-color: var(--white);
+  height: 50px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.app-footer .side-pagination {
+  flex: 0 0 20%;
+  max-width: 20%;
+}
+.app-footer .side-pagination h6{
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--textColor);
+  margin: 0;
+}
+.app-footer .btn-danger {
+  position: relative;
+  color: var(--white);
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: var(--secondaryColor);
+  text-transform: capitalize;
+  transition: all ease-in-out 0.3s;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.app-footer .center h6 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--textColor);
+  margin: 0;
+}
+.app-footer h6 .dropdown-menu li {
+  padding: 5px 15px;
+  font-size: 12px;
+  color: var(--content-color);
+}
+.app-footer h6 .dropdown-menu li:hover {
+  color: var(--secondaryColor);
+}
+.app-footer .page-selection {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 60%;
+  max-width: 60%;
+}
+.app-footer .center h6 {
+  margin: 0 20px;
+}
+.app-footer .center h6 span {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+  border: 1px solid var(--borderColor);
+  border-radius: 3px;
+  padding: 5px 7px;
+  color: var(--textColor);
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0 10px;
+  background-color: white;
+}
+.app-footer .btn-danger{
+  margin-left: 5px;
+}
+/* bottom pagination CSS end  */
+
+/* Responsive bottom pagination CSS start  */
+@media only screen and (max-width: 768px) {
+  .app-footer .side-pagination {
+    flex: 0 0 15%;
+    max-width: 15%;
+  }
+  .app-footer .page-selection {
+    flex: 0 0 70%;
+    max-width: 70%;
+  }
+  .app-footer .side-pagination h6{
+    font-size: 0;
+  }
+  .app-footer .page-selection h6 {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 5px;
+  }
+  .app-footer h5 .dropdown-menu li {
+    padding: 5px 15px;
+    font-size: 10px;
+    color: var(--content-color);
+  }
+  .app-footer h6 .dropdown-menu li:hover {
+    color: var(--secondaryColor);
+  }
+  .app-footer .page-selection h5 {
+    margin: 0 5px;
+  }
+  .app-footer .center h6 span {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    border: 1px solid var(--borderColor);
+    border-radius: 3px;
+    padding: 5px;
+    color: var(--textColor);
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 5px;
+    background-color: white;
+  }
+  .app-footer .btn-danger {
+    padding: 3px 8px;
+    margin-left: 0;
+  }
+  .app-footer .btn-danger i {
+    font-size: 12px;
+  }
+}
+/* Responsive bottom pagination CSS start  */

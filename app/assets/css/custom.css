@@ -1,0 +1,556 @@
+@media only screen {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: 400;
+  }
+  #app {
+    background-color: rgba(230, 249, 255, 0.3);
+    min-height: 100vh;
+  }
+  ::-webkit-scrollbar {
+    width: 13px;
+    height: 7px;
+  }
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.3);
+    border-radius: 7px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--borderColor);
+    border-radius: 7px;
+    height: 100px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--borderDarkColor);
+  }
+  .animated {
+    animation-duration: 0.4s;
+  }
+
+  /* custom border css  */
+  .custom-border-box {
+    position: relative;
+    padding: 10px 0;
+    margin: 10px 0;
+  }
+
+  .custom-border-box .custom-border {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 60px;
+    border-radius: 6px;
+    background-color: var(--borderColor);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  .custom-border-box .custom-border.border-left {
+    left: calc(50% - 20px);
+    transform: translate(-100%, -50%);
+  }
+
+  .custom-border-box .custom-border.border-right {
+    right: calc(50% - 20px);
+    transform: translate(100%, -50%);
+  }
+
+  .custom-border-box .custom-border.border-left::after,
+  .custom-border-box .custom-border.border-right::before {
+    content: '';
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    background-color: #88030a;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.12);
+    border-radius: 2px;
+  }
+
+  .custom-border-box .custom-border.border-left::after {
+    left: 100%;
+  }
+  .custom-border-box .custom-border.border-right::before {
+    right: 100%;
+  }
+  /* custom border css  */
+
+  @media only screen and (max-width: 768px) {
+    /* Responsive custom-border CSS start  */
+    .custom-border-box {
+      margin: 0;
+    }
+    .custom-border-box .custom-border {
+      width: 40px;
+    }
+    .custom-border-box .custom-border.border-right {
+      right: calc(50% - 14px);
+    }
+    .custom-border-box .custom-border.border-left {
+      left: calc(50% - 14px);
+    }
+    .custom-border-box .custom-border.border-left::after,
+    .custom-border-box .custom-border.border-right::before {
+      width: 7px;
+      height: 7px;
+    }
+    /* Responsive custom-border CSS end  */
+  }
+
+  /* custom check box css start  */
+  .custom-check-box {
+    position: relative;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 0;
+  }
+  .custom-check-box input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+  }
+  .custom-check-box .checkmark {
+    position: relative;
+    display: inline-block;
+    height: 22px;
+    width: 22px;
+    border-radius: 4px;
+    background-color: #ffffff;
+    border: 2px solid var(--borderColor);
+  }
+  .custom-check-box .checkmark::after {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .custom-check-box input[type='checkbox']:checked ~ .checkmark {
+    background-color: var(--secondaryColor);
+    border: 2px solid var(--primaryColor);
+  }
+  .custom-check-box input[type='checkbox']:checked ~ .checkmark::after {
+    content: '\2713';
+  }
+  .custom-check-box input[type='checkbox']:disabled {
+    cursor: not-allowed;
+  }
+  .custom-check-box input[type='checkbox']:disabled ~ .checkmark {
+    opacity: 0.6;
+  }
+  .custom-check-box .check-box-text {
+    color: var(--textColor);
+    font-size: 13px;
+    font-weight: 500;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 0 0 10px;
+  }
+  .custom-check-box .check-box-text .check-box-image {
+    display: inline-block;
+    margin-right: 6px;
+    padding: 4px;
+    height: 24px;
+    width: 24px;
+  }
+  .custom-check-box .check-box-text .check-box-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  .custom-check-box input[type='checkbox']:disabled ~ .check-box-text {
+    opacity: 0.6;
+  }
+  /* custom checkbox css end  */
+
+  /* modal css start  */
+  .modal {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .modal-header {
+    background-color: var(--secondaryColor);
+    padding: 8px;
+  }
+  .modal-header .modal-title,
+  .modal-header .modal-title span {
+    color: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    flex: 0 0 100%;
+    position: relative;
+  }
+  .modal-title .close {
+    padding: 0;
+    margin: 0;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    opacity: 1;
+  }
+  .modal-dialog.modal-lg {
+    width: 60%;
+    max-width: 60%;
+    margin: 30px auto;
+  }
+  .modal-dialog.modal-xl {
+    width: 90%;
+    max-width: 90%;
+    margin: 30px auto;
+  }
+  .modal-body .close {
+    display: inline-block;
+    position: absolute;
+    right: 14px;
+    top: 10px;
+    font-size: 15px;
+    height: 30px;
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    opacity: 1;
+    border-radius: 4px;
+    border: 2px solid var(--borderColor);
+    color: var(--textColor);
+    background-color: #f0f2f5;
+  }
+  .modal-body .close:hover{
+    background-color: #e1e6ea;
+    border-color: #d2d9e0;
+  }
+  /* modal css end  */
+}
+
+/* label modal css start  */
+.add-label-modal .modal-dialog {
+  float: right;
+  margin: 20px !important;
+  min-width: 400px;
+}
+/* label modal css end  */
+
+.add-modal {
+  max-width: 350px;
+}
+.add-modal .modal-body h6 {
+  position: relative;
+  padding: 8px 10px 8px 30px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--secondaryColor);
+  margin: 0;
+}
+.add-modal .modal-body h6 .custom-check-box {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+}
+.add-modal .modal-body h6 .custom-check-box .checkmark {
+  width: 17px;
+  height: 17px;
+}
+
+/* manage trends CSS start  */
+.device-parameter-box {
+  background-color: var(--white);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 4px;
+}
+.attribute-filter-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.attribute-filter-wrapper .form-group .form-control {
+  min-height: 38px;
+}
+.attribute-filter-list {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 0px;
+  margin: 12px 0;
+}
+.attribute-filter-list li {
+  padding: 8px 5px;
+}
+.attribute-filter-list li label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  padding: 0 50px 0 23px;
+  margin: 0;
+  text-align: left;
+}
+.attribute-filter-list li label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: none;
+}
+.attribute-filter-list li label .checkmark-text {
+  color: var(--black);
+  font-size: 12px;
+  display: inline-block;
+ 
+}
+.attribute-filter-list li label .data-value{
+  font-size: 12px;
+ position: absolute;
+ top: 2px;
+ right: 2px;
+}
+.trends-chart-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.trends-chart-wrapper:last-child {
+  margin-bottom: 0;
+}
+.trends-chart-wrapper h6 {
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+}
+.chart-box {
+  height: 300px;
+  width: 100%;
+  border: 2px dashed #e2e2e2;
+  border-radius: 6px;
+  padding: 10px;
+}
+.attribute-filter-list li label .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--borderColor);
+  text-transform: capitalize;
+}
+.attributeLabel input[type='checkbox']:checked ~ .checkmark {
+  background-color: var(--white);
+  border-color: var(--secondaryColor);
+}
+.attribute-filter-wrapper .form-group .css-yk16xz-control:hover {
+  border-color: var(--secondaryColor);
+}
+.attribute-filter-wrapper .form-group .css-1pahdxg-control:hover {
+  border-color: var(--secondaryColor);
+  box-shadow: var(--secondaryColor);
+}
+.attribute-filter-wrapper .css-1n7v3ny-option {
+  background-color: var(--secondaryColor);
+  color: white;
+  font-size: 13px;
+}
+.attribute-filter-wrapper .css-yt9ioa-option :active {
+  background-color: var(--secondaryColor);
+}
+.attribute-filter-wrapper .css-yt9ioa-option :hover {
+  background-color: var(--secondaryColor);
+}
+.attribute-filter-list .custom-check-box {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-bottom: 0;
+}
+/* manage trends CSS end  */
+
+/* line chart component CSS start  */
+.line-chart {
+  width: 100%;
+  height: 100%;
+}
+/* line chart component CSS end  */
+
+/* custom dropdown CSS start  */
+.custom-dropdown {
+  position: relative;
+}
+.custom-dropdown i {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 7px;
+}
+.custom-dropdown .dropdown-menu li h6 {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--textColor);
+  margin: 0;
+}
+.custom-dropdown .dropdown-menu li:last-child {
+  border-bottom: 0;
+}
+.custom-dropdown .dropdown-menu li:hover {
+  background-color: var(--secondaryColor);
+  color: var(--white);
+}
+.bookmark-dropdown .dropdown-menu li:hover i, .bookmark-dropdown .dropdown-menu li:hover h6{
+  color: var(--white);
+}
+/* custom dropdown CSS end  */
+
+/* filter custom dropdown CSS start  */
+.custom-dropdown .btn-toggle {
+  position: relative;
+  margin-left: 10px;
+  max-width: 200px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 23px 5px 10px;
+  color: var(--white);
+  background-color: var(--secondaryColor);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.btn-toggle.dropdown-toggle::after{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+}
+.btn-toggle h6{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--white);
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.custom-dropdown .dropdown-menu{
+  min-width: 15rem;
+  max-height: calc(100% + 400px);
+  overflow: auto;
+}
+.custom-dropdown .dropdown-menu li {
+  padding: 5px;
+  font-size: 15px;
+  border-bottom: 0;
+}
+.custom-dropdown .custom-check-box .checkmark{
+  margin-right: 5px;
+}
+.custom-dropdown .custom-dropdown-menu a {
+  padding: 0;
+  color: var(--textColor);
+}
+.custom-dropdown-menu a .checkmark {
+  margin-right: 8px;
+  width: 12px;
+  height: 12px;
+}
+/* filter custom dropdown CSS end  */
+
+/* bookmark custom dropdown CSS start  */
+.custom-dropdown.bookmark-dropdown{
+  flex: 1;
+  min-height: 38px;
+  background-color: var(--white);
+}
+.custom-dropdown.bookmark-dropdown .custom-dropdown-title {
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0;
+  padding: 11px 10px;
+}
+.custom-dropdown.bookmark-dropdown .custom-dropdown-title.dropdown-toggle::after{
+  content: none;
+}
+.custom-dropdown.bookmark-dropdown .dropdown-menu{
+  min-width: 21rem;
+}
+.custom-dropdown.bookmark-dropdown li{
+  position: relative;
+}
+.custom-dropdown.bookmark-dropdown li i {
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: var(--secondaryColor);
+}
+/* bookmark custom dropdown CSS end  */
+
+/* export dropdown css  */
+.export-dropdown .dropdown-menu li{
+    padding: 0px 10px;
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: var(--textColor);
+    font-weight: 600;
+}
+.export-dropdown .dropdown-menu li:last-child{
+  margin-bottom: 0;
+}
+.export-dropdown .dropdown-menu li.disabled{
+  color: #6c757d;
+  font-weight: 400;
+}
+/* export dropdown end  */
+
+/* confirmation modal CSS start  */
+.confirmation-modal-content{
+  text-align: center;
+  padding: 40px;
+}
+.confirmation-modal-content h4 {
+  font-weight: 600;
+  color: var(--secondaryColor);
+  margin-bottom: 15px;
+}
+.confirmation-modal-content h6 {
+  color: var(--contentColor);
+  margin: 0;
+  font-size: 15px;
+  line-height: 22px;
+  word-break: break-all;
+}
+.modal-footer .btn-dark{
+  min-width: 50px;
+}
+/* confirmation modal CSS end  */
+.disabled{
+  cursor:not-allowed !important
+}
+
+.error-msg{
+  color: red;
+  margin: 0px;
+  text-align: center;
+}

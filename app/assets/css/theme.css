@@ -1,0 +1,80 @@
+:root {
+    /* ----------------------- Base theme Start ----------------------- */
+    /* 1. Primary colour is used as base colour */
+    --primaryColor: #000000;
+    /* 2. Secondary colour is used as highlighter */
+    --secondaryColor: #88030a;
+    /* ----------------------- Base theme End ----------------------- */
+
+
+
+    /* ----------------------- Navigation Menu Start ----------------------- */
+    /* 1. navigation menu background colour will be same as primary colour */
+    /* 2. navigation menu border colour will be same as secondary colour */
+    /* 3. navigation menu text colour */
+    --navigationMenuText: #dddddd;
+    /* 4. navigation menu text hover colour */
+    --navigationMenuTextHover: #ffffff;
+    /* ----------------------- Navigation Menu END ----------------------- */
+
+
+
+    /* ----------------------- Breadcrumb Start ----------------------- */
+    /* 1. current page heading  */
+    --pageHeadingColor: #4a4a4a;
+    /* 2. current page sub heading  */
+    --pageSubHeadingColor: #757575;
+    /* ----------------------- Breadcrumb END ----------------------- */
+
+
+
+
+    /* ----------------------- Portal Colour Start ----------------------- */
+    /* 1. Mostly Used In Title-text and Header-text For Any Detailed Information-text  */
+    --contentColor: #757575;
+    /* 2. Mostly Used In  Detailed Information-text */
+    --textColor: #4a4a4a;
+    /* -----------------------  Portal Colour End ----------------------- */
+
+
+
+
+
+    /* ----------------------- Table View Start ----------------------- */
+    /* 1. Table Heading Background Colour */
+    --tableHeadingBackground: #EEEEEE;
+    /* 2. Table Heading Text Colour */
+    --tableHeadingTextColor: #4a4a4a;
+    /* ----------------------- Table View End ----------------------- */
+
+
+
+
+    /* ----------------------- Buttons,Badges and Custom Navigation Tabs Start ----------------------- */
+    /* 1. Buttons,Badges and Custom Navigation Tabs background colour will be same as Secondary colour */
+    /* 2. Buttons,Badges and Custom Navigation Tabs Text Colour */
+    --labelColor: #ffffff;
+    /* ----------------------- Buttons,Badges and Custom Navigation Tabs End ----------------------- */
+
+
+
+
+    /* ----------------------- Border Colour Start ----------------------- */
+    --borderColor: #dddddd;
+    --borderDarkColor: #909090;
+    /* ----------------------- Border Colour End ----------------------- */
+    
+
+
+
+    /* ----------------------- Footer Start ----------------------- */
+    /* 1. Footer Background Colour */
+    --footerBackground: #4a4a4a;
+    /* 2. Footer Text Colour */
+    --footerTextColor: #dddddd;
+    /* ----------------------- Footer End ----------------------- */
+
+    /* ----------------------- Skeleton Color Start ----------------------- */   
+    --skeletonColor: #D3D3D3;
+    /* ----------------------- Skeleton Color End ----------------------- */
+}

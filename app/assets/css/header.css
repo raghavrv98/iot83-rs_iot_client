@@ -1,0 +1,133 @@
+.appHeader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background: var(--primaryColor);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  z-index: 3;
+  padding: 10px;
+}
+.appHeader .navbar {
+  padding: 0px;
+  align-items: center;
+}
+.appHeader .navbar-brand {
+  flex: 0 0 5%;
+  max-width: 5%;
+  height: 55px;
+  margin-right: 0px;
+  padding: 4px;
+  background-color: var(--black);
+  border-right: 2px solid var(--secondaryColor);
+}
+.appHeader .navbar-brand:nth-last-child(1) {
+  border: none;
+}
+.appHeader .navbar-brand img{
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.appHeader .navbar .brand-name {
+  flex: 0 0 30%;
+  max-width: 30%;
+}
+.appHeader .navbar .brand-name h1{
+  font-size: 25px;
+  margin: 0px 0px 0px 15px;
+}
+
+/* nav links css start */
+.appHeader .navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: start;
+}
+.appHeader .navbar-nav .nav-item {
+  margin: 0 5px;
+}
+.appHeader .navbar-nav .nav-item .nav-link {
+  color: var(--navigationMenuText);
+  padding: 10px;
+  font-size: 14px;
+  border-bottom: 5px solid transparent;
+}
+.appHeader .navbar-nav .nav-item .nav-link:hover {
+  color: var(--navigationMenuTextHover);
+  cursor: pointer;
+}
+.appHeader .navbar-nav .nav-item.active .nav-link {
+  border-bottom-color: var(--secondaryColor);
+  color: var(--navigationMenuTextHover);
+}
+.appHeader .navbar-nav .nav-link span {
+  margin-right: 5px;
+}
+/* nav link css end  */
+
+/* Responsive appHeader CSS Start */
+@media only screen and (max-width: 768px) {
+  .appHeader .navbar-nav {
+    flex-direction: column;
+  }
+  .appHeader .navbar-brand {
+    flex: 0 0 16%;
+    max-width: 16%;
+    padding-right: 10px;
+  }
+  .appHeader .navbar .brand-name {
+    flex: 0  0 45%;
+    max-width: 45%;
+  }
+  .appHeader .navbar .menu-icon .navbar-toggler{
+    padding: 5px 7px; 
+    border: 1px solid var(--borderColor);
+    color: var(--navigationMenuText) !important;
+    border-radius: 4px;
+    font-size: 15px;
+  }
+  .appHeader .navbar-nav .nav-item .nav-link {
+    border-left: 5px solid transparent;
+    border-bottom: none;
+    margin-left: 5px;
+    padding: 15px 10px;
+  }
+  .appHeader .navbar-nav .nav-item.active .nav-link {
+    border-left-color: var(--secondaryColor);
+    color: var(--navigationMenuTextHover);
+  }
+  .navbar-responsive{
+    position: fixed;
+    top: 75px;
+    bottom: 48px;
+    left: 0;
+    right: 50%;
+    transition: all .4s ease;
+    border-radius: 0 5px 5px 0;
+    background:  var(--primaryColor);
+    border: 2px solid var(--white);
+    overflow-y: auto;
+  }
+  .appHeader .navbar  .brand-name h1{
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+@media only screen and (min-width: 768px)and (max-width: 1024px) {
+  .appHeader .navbar-brand {
+    flex: 0 0 10%;
+    max-width: 10%;
+  }
+  .navbar-responsive{
+    right: 75%;
+  }
+  .appHeader .navbar  .brand-name h1{
+    font-size: 25px;
+    margin: 0;
+  } 
+
+}
+/* Responsive appHeader CSS End */

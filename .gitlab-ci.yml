@@ -1,0 +1,64 @@
+image: node:8
+
+stages:
+    - build
+    - upload
+    - deploy
+
+buildUI:
+    stage: build
+    rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^(master|develop|stage|uat|release.*|feature.*)$/ || $CI_COMMIT_BRANCH =~ /^(master|develop|stage|uat|release.*|feature.*)$/
+    artifacts:
+        paths:
+            - rsUi.tar.gz
+    script:
+        - npm install
+        - npm run build
+        - tar -cvzf rsUi.tar.gz build/*
+
+
+upload:
+    stage: upload
+    artifacts:
+      paths:
+        - id_rsa
+        - output.txt
+    rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^(master|develop|stage|uat|release.*|feature.*)$/ || $CI_COMMIT_BRANCH =~ /^(master|develop|stage|uat|release.*|feature.*)$/
+    image:
+        name: banst/awscli
+        entrypoint: [""]
+    script:
+        - aws configure set region us-east-1
+        - aws s3 cp rsUi.tar.gz s3://${S3_BUCKET}/rs-${CI_COMMIT_REF_NAME}/release/rsUi.tar.gz
+        - aws s3 cp s3://${S3_BUCKET}/rs-develop/release/id_rsa id_rsa
+        - aws s3 cp s3://${S3_BUCKET}/rs-develop/release/output.txt output.txt
+
+deploy:
+  stage: deploy
+  image:
+    name: alpine
+  rules:
+    - if: $CI_MERGE_REQUEST_TARGET_BRANCH_NAME =~ /^(develop)$/ || $CI_COMMIT_BRANCH =~ /^(develop)$/
+  script:
+    - apk add --update openssh
+    - chmod 400 id_rsa
+    - echo "file = $PWD/id_rsa" >> output.txt
+    - cat output.txt | tr -d "[:blank:]" > output.sh
+    - cat output.sh
+    - source output.sh
+    - mkdir -p ~/.ssh
+    - touch ~/.ssh/config
+    - echo "Host jmp" >> ~/.ssh/config
+    - echo "Hostname $BASTION_HOST_PUBLIC_IP" >> ~/.ssh/config
+    - echo "User ubuntu" >> ~/.ssh/config
+    - echo "IdentityFile $file" >> ~/.ssh/config
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - echo "Host app" >> ~/.ssh/config
+    - echo "Hostname $ApplianceIp" >> ~/.ssh/config
+    - echo "User ubuntu" >> ~/.ssh/config
+    - echo "IdentityFile $file" >> ~/.ssh/config
+    - echo "StrictHostKeyChecking no" >> ~/.ssh/config
+    - echo "ProxyJump jmp" >> ~/.ssh/config
+    - ssh app "cd rsSetup && bash updateCluster.sh"

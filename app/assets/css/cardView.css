@@ -1,0 +1,118 @@
+/* device card CSS start  */
+.device-card-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+.card.card-thumbnail {
+  position: relative;
+  border-radius: 8px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 5px 8px;
+  margin: 5px;
+  cursor: pointer;
+}
+.card-thumbnail.active {
+  border: 2px solid rgb(0, 255, 0);
+}
+.card-thumbnail.inActive {
+  border: 2px solid rgba(255, 0, 0);
+}
+.card-thumbnail.disabled {
+  border: 2px solid var(--borderColor);
+  background-color: var(--tableHeadingBackground);
+  cursor: not-allowed;
+}
+.card-thumbnail .card-header {
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+.card-thumbnail .card-header h6 {
+  position: relative;
+  font-weight: 600;
+  font-size: 16px;
+  width: 115px;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.card-thumbnail .card-header h6 span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.card-thumbnail .card-header h6 span.active {
+  background-color: rgb(0, 255, 0);
+}
+.card-thumbnail .card-header h6 span.inActive {
+  background-color: #92979c !important;
+}
+.card-thumbnail .card-body {
+  padding: 0;
+}
+.device-list li {
+  position: relative;
+}
+.device-list li h6 {
+  margin: 0;
+  font-weight: 400;
+  color: var(--contentColor);
+}
+.card-thumbnail .device-list h6 {
+  font-size: 10px;
+}
+.device-card .device-list h6 {
+  font-size: 15px;
+}
+.device-list li p {
+  font-weight: 600;
+  color: var(--textColor);
+  margin: 0 0 0 5px;
+}
+.card-thumbnail .device-list p {
+  font-size: 10px;
+}
+.device-card .device-list p {
+  font-size: 15px;
+}
+.device-list .bar-graph {
+  position: relative;
+  padding: 3px 0;
+  border-radius: 6px;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+}
+.device-list .bar-graph span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  border-radius: 0 6px 6px 0;
+}
+
+/* subDevice list CSS start  */
+.device-card .device-list .sub-device-list {
+  margin: 2px 0 0;
+}
+.device-card .device-list li {
+  margin-bottom: 8px;
+}
+.device-card .device-list li:last-child {
+  margin: 0;
+}
+.sub-device-list div {
+  position: relative;
+}
+/* subDevice list CSS end */
+
+/* device Card CSS end  */

@@ -1,0 +1,30 @@
+.skeleton-outer {
+  position: relative;
+  height: calc(100vh - 199px);
+  overflow: hidden;
+}
+
+.skeleton-content::after,
+.chart-outer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(242, 242, 242, 0.2) 20%,
+    rgba(242, 242, 242, 0.3) 60%,
+    transparent 0
+  );
+  animation: animate 2s infinite ease-out;
+}
+
+@keyframes animate {
+  100% {
+    transform: translateX(50%);
+  }
+}
